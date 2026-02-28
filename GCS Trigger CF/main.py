@@ -27,7 +27,7 @@ def gcs_trigger_process(cloud_event):
     name=data.get("name")
 
 
-    if not name.startswith("raw_data/"):
+    if not name.startswith("raw-data-mnv/"):
         logger.info("skipping object not in raw data: %s",name)
         return make_response(jsonify({"skipped":"ignored non raw data path"}),204)
 
